@@ -123,7 +123,7 @@ public class MyMouseAdapter extends MouseAdapter {
 				} else {
 					if ((gridX >= 0) || (gridY >= 0)) { //Right Click is releasing inside 
 						        Color newColor = null;																												
-							    newColor = Color.red;
+							    newColor = Color.RED;
 								myPanel.colorArray[gridX][gridY] = newColor;
 								myPanel.repaint();
 							}

@@ -16,7 +16,11 @@ public class MyPanel extends JPanel {
 	public int y = -1;
 	public int mouseDownGridX = 0;
 	public int mouseDownGridY = 0;
+	
 	public Color[][] colorArray = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
+	public int bombs = 1;
+	public int [][] neighborCells = new int [TOTAL_COLUMNS][TOTAL_ROWS];
+	
 	public MyPanel() {   //This is the constructor... this code runs first to initialize
 		if (INNER_CELL_SIZE + (new Random()).nextInt(1) < 1) {	//Use of "random" to prevent unwanted Eclipse warning
 			throw new RuntimeException("INNER_CELL_SIZE must be positive!");
@@ -46,7 +50,7 @@ public class MyPanel extends JPanel {
 		int height = y2 - y1;
 
 		//Paint the background
-		g.setColor(Color.GRAY);
+		g.setColor(Color.DARK_GRAY);
 		g.fillRect(x1, y1, width + 1, height + 1);
 
 		//Draw the grid minus the bottom row (which has only one cell)
@@ -69,6 +73,7 @@ public class MyPanel extends JPanel {
 				}
 			}
 		}
+		
 	}
 	public int getGridX(int x, int y) {
 		Insets myInsets = getInsets();
@@ -97,6 +102,7 @@ public class MyPanel extends JPanel {
 	}
 	public int getGridY(int x, int y) {
 		Insets myInsets = getInsets();
+		int newvar2;
 		int x1 = myInsets.left;
 		int y1 = myInsets.top;
 		x = x - x1 - GRID_X;
@@ -120,4 +126,5 @@ public class MyPanel extends JPanel {
 		}
 		return y;
 	}
+	
 }
