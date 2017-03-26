@@ -24,7 +24,8 @@ public class MyMouseAdapter extends MouseAdapter {
 			Insets myInsets = myFrame.getInsets();
 			int x1 = myInsets.left;
 			int y1 = myInsets.top;
-			e.translatePoint(-x1, -y1);
+			e.translatePoint(-x1, -y1); 
+			
 			int x = e.getX();
 			int y = e.getY();
 			myPanel.x = x;
