@@ -70,7 +70,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			} else {
 				if ((gridX == -1) || (gridY == -1)) {
 					//Is releasing outside
-					//Do nothing
+					
 				} else {
 					if ((myPanel.mouseDownGridX != gridX) || (myPanel.mouseDownGridY != gridY)) {
 						//Released the mouse button on a different cell where it was pressed
