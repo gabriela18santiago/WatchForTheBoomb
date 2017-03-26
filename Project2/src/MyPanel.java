@@ -8,11 +8,11 @@ import javax.swing.JPanel;
 public class MyPanel extends JPanel {
 	
 	public Color mine;
-<<<<<<< HEAD
+
 	public int isMine = 1; //assigns 1 to a cell that is mine 
-=======
+
 	public int bombs = 1; //assigns 1 to a cell that is mine 
->>>>>>> refs/heads/GabrielasBranch
+
 	public int[][]panelValue= new int [TOTAL_COLUMNS][TOTAL_ROWS];
 	Random generator = new Random();
 	
@@ -236,17 +236,20 @@ public class MyPanel extends JPanel {
 		int NeighborMines = 0;
 		for(int i = x-1; i <= x+1; i++) {
 			for(int j = y-1; j <= y+1; j++) {
-<<<<<<< HEAD
+
 				if(i >=0 && i<TOTAL_COLUMNS && j>=0 && j <TOTAL_ROWS && panelValue[i][j]==isMine) {
-=======
+
 				if(i >=0 && i<TOTAL_COLUMNS && j>=0 && j <TOTAL_ROWS && panelValue[i][j]==bombs) {
->>>>>>> refs/heads/GabrielasBranch
+
 					NeighborMines++;
 				}
+				}
 			}
+		
 		}
 		return NeighborMines;
-	}
+	}	
+
 	
 	public boolean CloserMines(int x, int y) {
 		return NeighborMinesFinder(x,y)>0;
