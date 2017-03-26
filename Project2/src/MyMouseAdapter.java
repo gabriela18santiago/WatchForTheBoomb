@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MyMouseAdapter extends MouseAdapter {
 	private Random generator = new Random();
@@ -80,16 +81,30 @@ public class MyMouseAdapter extends MouseAdapter {
 							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
 						myPanel.repaint();
 					} else {
-						{
-							//On the grid other than on the left column and on the top row:
-							Color newColor = null;
-							switch (generator.nextInt(1)) {
-							case 0:
-								newColor = Color.LIGHT_GRAY;
-								break;
-							}
-							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = newColor;
+						
+						if(myPanel.panelValue[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == 1){
+							myPanel.showMineLocation();
+							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
+							
 							myPanel.repaint();
+							JOptionPane.showMessageDialog(myFrame,  "Game Over!");
+							System.exit(0);
+							//On the grid other than on the left column and on the top row:
+							/*
+							*Color newColor = null;
+							*switch (generator.nextInt(1)) {
+							*case 0:
+							*	newColor = Color.LIGHT_GRAY;
+							*	break;
+							*/
+						}
+						if(myPanel.CloserMines(myPanel.mouseDownGridX, myPanel.mouseDownGridY)){
+							
+							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.LIGHT_GRAY;
+							myPanel.repaint();
+						}
+						else{
+							myPanel.noCloserMines(myPanel.mouseDownGridX, myPanel.mouseDownGridY);
 						}
 					}
 				}
