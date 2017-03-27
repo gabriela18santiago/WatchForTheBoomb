@@ -131,9 +131,10 @@ public class MyMouseAdapter extends MouseAdapter {
 							    newColor = Color.RED;
 								myPanel.colorArray[gridX][gridY] = newColor;
 								myPanel.repaint();
-							}
+						}
 				
 					}
+				
 			break;
 		default:    //Some other button (2 = Middle mouse button, etc.)
 			//Do nothing

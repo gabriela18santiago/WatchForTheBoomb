@@ -9,8 +9,6 @@ public class MyPanel extends JPanel {
 	
 	public Color mine;
 
-	public int isMine = 1; //assigns 1 to a cell that is mine 
-
 	public int bombs = 1; //assigns 1 to a cell that is mine 
 
 	public int[][]panelValue= new int [TOTAL_COLUMNS][TOTAL_ROWS];
@@ -237,7 +235,7 @@ public class MyPanel extends JPanel {
 		for(int i = x-1; i <= x+1; i++) {
 			for(int j = y-1; j <= y+1; j++) {
 
-				if(i >=0 && i<TOTAL_COLUMNS && j>=0 && j <TOTAL_ROWS && panelValue[i][j]==isMine) {
+				if(i >=0 && i<TOTAL_COLUMNS && j>=0 && j <TOTAL_ROWS && panelValue[i][j]==bombs) {
 
 				if(i >=0 && i<TOTAL_COLUMNS && j>=0 && j <TOTAL_ROWS && panelValue[i][j]==bombs) {
 
