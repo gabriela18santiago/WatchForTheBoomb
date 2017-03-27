@@ -86,14 +86,7 @@ public class MyMouseAdapter extends MouseAdapter {
 							myPanel.repaint();
 							JOptionPane.showMessageDialog(myFrame,  "Game Over!");
 							System.exit(0);
-							//On the grid other than on the left column and on the top row:
-							/*
-							*Color newColor = null;
-							*switch (generator.nextInt(1)) {
-							*case 0:
-							*	newColor = Color.LIGHT_GRAY;
-							*	break;
-							*/
+							
 						}
 						if(myPanel.CloserMines(myPanel.mouseDownGridX, myPanel.mouseDownGridY)){
 							
